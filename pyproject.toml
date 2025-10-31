@@ -1,0 +1,35 @@
+[project]
+name = "argostats"
+version = "0.1.0"
+description = "Argostats: set of Python tools to perform statistics with the Argo database"
+readme = "README.md"
+authors = [
+    { name = "groullet", email = "guillaume.roullet@univ-brest.fr" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "cartopy>=0.25.0",
+    "gsw>=3.6.20",
+    "ipython>=8.37.0",
+    "netcdf4>=1.7.3",
+    "numpy>=2.2.6",
+    "pathlib>=1.0.1",
+    "scipy>=1.15.3",
+    "xarray>=2025.6.1",
+]
+
+[project.scripts]
+argostats = "argostats:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "argostats",
+    "pytest>=8.4.2",
+]
+
+[tool.uv.sources]
+argostats = { workspace = true }
