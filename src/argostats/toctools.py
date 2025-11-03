@@ -87,7 +87,7 @@ def build_summary():
     dacwmos = get_allwmos()
     df = get_infos(dacwmos)
     print(f"save Argo Summary in {TOCFILE}")
-    save_argo_summary(df)
+    save_summary(df)
 
 
 def get_dacwmos_summary(dacwmos):
