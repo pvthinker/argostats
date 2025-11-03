@@ -122,7 +122,7 @@ aop = argo.load_profiles()
 domain = argo.DOMAINS["agulhas"]
 at = argo.Atlas(domain, 1/4, aop)
 CT, SR = at.clim_TS()
-EAPE, SIGSTAR = at.clim_EAPE(algo=R14)
+EAPE, SIGSTAR = at.clim_EAPE(algo=argo.R14)
 at.to_netcdf()
 
 lon, lat = at.lonlat
@@ -134,7 +134,7 @@ The NetCDF file is stored in the `ARGOSTATS` directory. Two methods are possible
 and plot it
 
 ```Python
-argo.atlas.niceplot(at,"EAPE",vmin=0,vmax=2000)
+argo.figures.map_atlas(at, "EAPE", vmin=0, vmax=2000, kz=43)
 ```
 
 ## Under the hood
